@@ -39,6 +39,7 @@ const serveStatic = require('serve-static');
 const spawn = childprocess.spawn;
 const swig = require('swig-templates');
 const url = require('url');
+const browserSync = require('browser-sync').create();
 
 // DEFAULT_GA is the default Google Analytics tracker ID
 const DEFAULT_GA = 'UA-49880327-14';
