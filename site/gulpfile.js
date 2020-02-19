@@ -345,9 +345,6 @@ gulp.task('serve', gulp.series(
     () => {
       return gulp.src('build')
         .pipe(webserver(opts.webserver()));
-      browserSync.init({
-        proxy: "10.146.0.0"
-      });
     }
   )
 ));
