@@ -940,3 +940,9 @@ gulp.task('publish:prod:views', (callback) => {
   const opts = { exclude: CODELABS_NAMESPACE, dry: DRY_RUN, deleteMissing: DELETE_MISSING };
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
 });
+
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    proxy: "34.66.27.52"
+  });
+});
