@@ -345,6 +345,9 @@ gulp.task('serve', gulp.series(
     () => {
       return gulp.src('build')
         .pipe(webserver(opts.webserver()));
+      browserSync.init({
+        proxy: "10.146.0.0"
+      });
     }
   )
 ));
@@ -940,10 +943,4 @@ gulp.task('publish:prod:codelabs', (callback) => {
 gulp.task('publish:prod:views', (callback) => {
   const opts = { exclude: CODELABS_NAMESPACE, dry: DRY_RUN, deleteMissing: DELETE_MISSING };
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
-});
-
-gulp.task('browser-sync', function() {
-  browserSync.init({
-    proxy: "10.128.0.2"
-  });
 });
