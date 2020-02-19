@@ -944,6 +944,6 @@ gulp.task('publish:prod:views', (callback) => {
 
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: "34.66.27.52"
+    proxy: "10.128.0.2"
   });
 });
